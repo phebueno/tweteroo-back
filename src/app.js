@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import tweets from "./data/tweetsData.js";
+//import tweets from "./data/tweetsData.js";
 
 //Variáveis globais para armazenamento
-//const tweets=[];
+const tweets=[];
 const users = [
   {
     username: "bobesponja",
