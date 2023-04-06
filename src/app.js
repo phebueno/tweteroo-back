@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-//import tweets from "./data/tweetsData.js";
+import tweets from "./data/tweetsData.js";
 
 //Variáveis globais para armazenamento
-const tweets = [];
+//const tweets = [];
 const users = [
   {
     username: "bobesponja",
@@ -36,6 +36,11 @@ function validate400(...fields) {
   return { error, message };
 }
 
+function getAvatar(usuarioDoTweet){
+    const imgAvatar = users.find((user) => user.username === usuarioDoTweet).avatar;
+    return imgAvatar;
+}
+
 //Registro do usuário
 app.post("/sign-up", (req, res) => {
   const { username, avatar } = req.body;
@@ -65,10 +70,22 @@ app.get("/tweets", (req, res) => {
   const newestTenTweets = tweets.slice(-10);
   let newestTenTweetsAvatar = newestTenTweets.map((tweet) => ({
     ...tweet,
-    avatar: users.find((user) => user.username === tweet.username).avatar, //vai dar erro se o usuário procurado não estiver cadastrado
+    avatar: getAvatar(tweet.username), //vai dar erro se o usuário procurado não estiver cadastrado
   }));
   res.send(newestTenTweetsAvatar);
   //Adicionar .reverse() para que inverter a ordem em que os tweets são enviados
+});
+
+//Retorna tweets do usuário
+app.get("/tweets/:username", (req, res) => {
+  const usuario = req.params.username;
+  const tweetsUser = tweets.filter(tweet=>tweet.username===usuario);
+  if(tweetsUser.length===0) return res.send([]);
+  const tweetsObj = tweetsUser.map((tweet) => ({
+    ...tweet,
+    avatar: getAvatar(usuario),
+  }));
+  res.send(tweetsObj);
 });
 
 const PORT = 5000;
