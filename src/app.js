@@ -1,20 +1,12 @@
 import express from "express";
 import cors from "cors";
-import tweets from "./data/tweetsData.js";
+//import tweets from "./mockData/tweetsData.js";
+//import users from "./mockData/usersData.js";
 
 //Variáveis globais para armazenamento
-//const tweets = [];
-const users = [
-  {
-    username: "bobesponja",
-    avatar:
-      "https://cdn.shopify.com/s/files/1/0150/0643/3380/files/Screen_Shot_2019-07-01_at_11.35.42_AM_370x230@2x.png",
-  },
-  {
-    username: "bobba",
-    avatar: "a",
-  },
-];
+const tweets = [];
+const users = [];
+
 
 //Criação do App Servidor
 const app = express();
@@ -72,7 +64,7 @@ app.get("/tweets", (req, res) => {
     ...tweet,
     avatar: getAvatar(tweet.username), //vai dar erro se o usuário procurado não estiver cadastrado
   }));
-  res.send(newestTenTweetsAvatar);
+  res.send(newestTenTweetsAvatar.reverse());
   //Adicionar .reverse() para que inverter a ordem em que os tweets são enviados
 });
 
@@ -85,7 +77,7 @@ app.get("/tweets/:username", (req, res) => {
     ...tweet,
     avatar: getAvatar(usuario),
   }));
-  res.send(tweetsObj);
+  res.send(tweetsObj.reverse());
 });
 
 const PORT = 5000;
