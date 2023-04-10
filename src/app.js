@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-import tweets from "./mockData/tweetsData.js";
-import users from "./mockData/usersData.js";
+//import tweets from "./mockData/tweetsData.js";
+//import users from "./mockData/usersData.js";
 
 //Variáveis globais para armazenamento
-//const tweets = [];
-//const users = [];
+const tweets = [];
+const users = [];
 
 
 //Criação do App Servidor
