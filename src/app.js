@@ -1,7 +1,5 @@
 import express from "express";
 import cors from "cors";
-//import tweets from "./mockData/tweetsData.js";
-//import users from "./mockData/usersData.js";
 
 //Variáveis globais para armazenamento
 const tweets = [];
@@ -66,13 +64,12 @@ app.get("/tweets", (req, res) => {
   let maxPage = -10;
   if(page){
     if(page < 1) res.status(400).send("Informe uma página válida!");
-    const totalPages = tweets.length%10;
     maxPage = -(page*10);
     minPage = Number(page) ===1 ? undefined : maxPage+10;
   }
   
   const newestTenTweets = tweets.slice(maxPage, minPage); //adicionar aqui limites de múltiplos de 10
-  let newestTenTweetsAvatar = newestTenTweets.map((tweet) => ({
+  const newestTenTweetsAvatar = newestTenTweets.map((tweet) => ({
     ...tweet,
     avatar: getAvatar(tweet.username), //vai dar erro se o usuário procurado não estiver cadastrado
   }));
