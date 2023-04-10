@@ -88,42 +88,42 @@ const tweets = [
   },
   {
     username: "bobba",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao 10",
   },
   {
     username: "bobba",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobba",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobba",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobba",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobesponja",
-    tweet: "Eu amo hambúrguer de caranguejo!",
+    tweet: "EAyyy lmao",
   },{
     username: "bobesponja",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobesponja",
-    tweet: "Eu amo hambúrguer",
+    tweet: "EAyyy lmao",
   },
   {
     username: "bobesponja",
-    tweet: "Eu amo hambúrguer!",
+    tweet: "Ayyy lmao",
   },
   {
     username: "bobesponja",
-    tweet: "Eu amo hambúrguer de siri!",
+    tweet: "Ayyy lmao 1",
   },
   {
     username: "bobesponja",
