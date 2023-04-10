@@ -46,7 +46,9 @@ app.post("/sign-up", (req, res) => {
 
 //Post do tweet
 app.post("/tweets", (req, res) => {
-  const { username, tweet } = req.body;
+  const username = req.headers.user;
+  console.log(username);
+  const { tweet } = req.body;
   const { error, message } = validate400(username, tweet);
   if (error) return res.status(error).send(message);
   else {
